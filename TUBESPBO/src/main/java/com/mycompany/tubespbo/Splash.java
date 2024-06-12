@@ -34,10 +34,10 @@ public class Splash extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
 
-        jPanel1.setBackground(new java.awt.Color(255, 153, 0));
+        jPanel1.setBackground(new java.awt.Color(0, 153, 255));
 
-        MyProgress.setBackground(new java.awt.Color(255, 255, 255));
-        MyProgress.setForeground(new java.awt.Color(51, 102, 255));
+        MyProgress.setBackground(new java.awt.Color(0, 153, 255));
+        MyProgress.setForeground(new java.awt.Color(255, 255, 255));
 
         Percentage.setFont(new java.awt.Font("Century Gothic", 1, 24)); // NOI18N
         Percentage.setForeground(new java.awt.Color(255, 255, 255));

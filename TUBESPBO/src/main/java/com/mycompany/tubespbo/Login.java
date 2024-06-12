@@ -48,7 +48,7 @@ public class Login extends javax.swing.JFrame {
         setUndecorated(true);
         setPreferredSize(new java.awt.Dimension(600, 350));
 
-        jPanel1.setBackground(new java.awt.Color(255, 153, 0));
+        jPanel1.setBackground(new java.awt.Color(0, 153, 255));
 
         jLabel7.setBackground(new java.awt.Color(255, 255, 255));
         jLabel7.setFont(new java.awt.Font("Century Gothic", 1, 20)); // NOI18N
@@ -116,7 +116,7 @@ public class Login extends javax.swing.JFrame {
 
         jLabel1.setBackground(new java.awt.Color(255, 255, 255));
         jLabel1.setFont(new java.awt.Font("Century Gothic", 1, 20)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 153, 0));
+        jLabel1.setForeground(new java.awt.Color(0, 153, 255));
         jLabel1.setText("LOGIN");
 
         jTextField1.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
@@ -135,20 +135,20 @@ public class Login extends javax.swing.JFrame {
 
         jLabel2.setBackground(new java.awt.Color(255, 255, 255));
         jLabel2.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 153, 0));
+        jLabel2.setForeground(new java.awt.Color(0, 153, 255));
         jLabel2.setText("Pilih Role");
 
         jLabel3.setBackground(new java.awt.Color(255, 255, 255));
         jLabel3.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 153, 0));
+        jLabel3.setForeground(new java.awt.Color(0, 153, 255));
         jLabel3.setText("Username");
 
         jLabel4.setBackground(new java.awt.Color(255, 255, 255));
         jLabel4.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 153, 0));
+        jLabel4.setForeground(new java.awt.Color(0, 153, 255));
         jLabel4.setText("Password");
 
-        jButton1.setBackground(new java.awt.Color(255, 153, 0));
+        jButton1.setBackground(new java.awt.Color(0, 153, 255));
         jButton1.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Login");
@@ -159,9 +159,9 @@ public class Login extends javax.swing.JFrame {
         });
 
         jButton2.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(255, 153, 0));
+        jButton2.setForeground(new java.awt.Color(0, 153, 255));
         jButton2.setText("Clear");
-        jButton2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 153, 0), 1, true));
+        jButton2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 153, 255), 1, true));
         jButton2.setMaximumSize(new java.awt.Dimension(77, 30));
         jButton2.setMinimumSize(new java.awt.Dimension(77, 30));
         jButton2.setPreferredSize(new java.awt.Dimension(77, 30));
@@ -173,7 +173,7 @@ public class Login extends javax.swing.JFrame {
 
         jLabel5.setBackground(new java.awt.Color(255, 255, 255));
         jLabel5.setFont(new java.awt.Font("Century Gothic", 1, 20)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(255, 153, 0));
+        jLabel5.setForeground(new java.awt.Color(51, 51, 51));
         jLabel5.setText("×");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);

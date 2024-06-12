@@ -47,18 +47,18 @@ public class Category extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
 
-        jPanel1.setBackground(new java.awt.Color(255, 153, 0));
+        jPanel1.setBackground(new java.awt.Color(0, 153, 255));
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel1.setBackground(new java.awt.Color(255, 255, 255));
         jLabel1.setFont(new java.awt.Font("Century Gothic", 1, 20)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 153, 0));
+        jLabel1.setForeground(new java.awt.Color(0, 153, 255));
         jLabel1.setText("MANAGE CATEGORY");
 
         jLabel3.setBackground(new java.awt.Color(255, 255, 255));
         jLabel3.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 153, 0));
+        jLabel3.setForeground(new java.awt.Color(0, 153, 255));
         jLabel3.setText("Category ID");
 
         jTextField1.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
@@ -67,7 +67,7 @@ public class Category extends javax.swing.JFrame {
 
         jLabel4.setBackground(new java.awt.Color(255, 255, 255));
         jLabel4.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 153, 0));
+        jLabel4.setForeground(new java.awt.Color(0, 153, 255));
         jLabel4.setText("Name");
 
         jTextField2.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
@@ -76,7 +76,7 @@ public class Category extends javax.swing.JFrame {
 
         jLabel6.setBackground(new java.awt.Color(255, 255, 255));
         jLabel6.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(255, 153, 0));
+        jLabel6.setForeground(new java.awt.Color(0, 153, 255));
         jLabel6.setText("Description");
 
         jTable1.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
@@ -105,7 +105,7 @@ public class Category extends javax.swing.JFrame {
             jTable1.getColumnModel().getColumn(2).setMaxWidth(350);
         }
 
-        jButton1.setBackground(new java.awt.Color(255, 153, 0));
+        jButton1.setBackground(new java.awt.Color(0, 153, 255));
         jButton1.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Add");
@@ -115,7 +115,7 @@ public class Category extends javax.swing.JFrame {
             }
         });
 
-        jButton2.setBackground(new java.awt.Color(255, 153, 0));
+        jButton2.setBackground(new java.awt.Color(0, 153, 255));
         jButton2.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
         jButton2.setForeground(new java.awt.Color(255, 255, 255));
         jButton2.setText("Edit");
@@ -125,7 +125,7 @@ public class Category extends javax.swing.JFrame {
             }
         });
 
-        jButton3.setBackground(new java.awt.Color(255, 153, 0));
+        jButton3.setBackground(new java.awt.Color(0, 153, 255));
         jButton3.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
         jButton3.setForeground(new java.awt.Color(255, 255, 255));
         jButton3.setText("Delete");
@@ -140,7 +140,7 @@ public class Category extends javax.swing.JFrame {
         jScrollPane2.setViewportView(jTextArea1);
 
         jButton4.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
-        jButton4.setForeground(new java.awt.Color(255, 153, 0));
+        jButton4.setForeground(new java.awt.Color(0, 153, 255));
         jButton4.setText("Clear");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
