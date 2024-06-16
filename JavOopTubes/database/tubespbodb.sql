@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 16, 2024 at 02:36 PM
+-- Generation Time: Jun 16, 2024 at 05:20 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.0.30
 
@@ -43,6 +43,27 @@ INSERT INTO `categories` (`catID`, `catName`, `catDesc`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `customer`
+--
+
+CREATE TABLE `customer` (
+  `customerID` int(11) NOT NULL,
+  `namaLengkap` varchar(70) NOT NULL,
+  `tglLahir` varchar(20) NOT NULL,
+  `email` varchar(70) NOT NULL,
+  `kataSandi` varchar(35) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `customer`
+--
+
+INSERT INTO `customer` (`customerID`, `namaLengkap`, `tglLahir`, `email`, `kataSandi`) VALUES
+(1, 'Benony Gabriel', '17/05/2004', 'benonygabriel17@gmail.com', 'beno123');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `products`
 --
 
@@ -59,43 +80,37 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`prodID`, `prodName`, `prodQtty`, `prodPrice`, `prodCategory`) VALUES
-(1, 'Bubur Cangijo', 350, 10000, 'Vegetable'),
-(2, 'Sate Ayam', 470, 25000, 'Vegetable'),
-(3, 'Nasi Kuning ', 190, 15000, 'Meat'),
-(4, 'Ayam Suwir', 370, 15000, 'Meat'),
+(1, 'Bubur Cangijo', 331, 10000, 'Vegetable'),
+(2, 'Sate Ayam', 454, 25000, 'Vegetable'),
+(3, 'Nasi Kuning ', 188, 15000, 'Meat'),
+(4, 'Ayam Suwir', 365, 15000, 'Meat'),
 (5, 'Nasi Bakar', 600, 10000, 'Meat'),
-(6, 'Cilok', 475, 8000, 'Meat'),
+(6, 'Cilok', 469, 8000, 'Meat'),
 (7, 'Nasi Uduk', 790, 12000, 'Meat'),
-(8, 'Soto Ayam', 550, 15000, 'Beverage'),
-(9, 'Pempek', 550, 15000, 'Beverage'),
-(10, 'test', 500, 1200, 'Vegetable');
+(8, 'Soto Ayam', 545, 15000, 'Beverage'),
+(9, 'Pempek', 547, 15000, 'Beverage'),
+(10, 'Nasi Goreng', 500, 1200, 'Beverage');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user`
+-- Table structure for table `seller`
 --
 
-CREATE TABLE `user` (
-  `id` int(11) NOT NULL,
-  `nama_lengkap` varchar(70) NOT NULL,
-  `tanggal_Lahir` varchar(10) NOT NULL,
-  `email` varchar(30) NOT NULL,
-  `kata_sandi` varchar(30) NOT NULL
+CREATE TABLE `seller` (
+  `sellerID` int(11) NOT NULL,
+  `namaLengkap` varchar(70) NOT NULL,
+  `tglLahir` varchar(20) NOT NULL,
+  `email` varchar(70) NOT NULL,
+  `kataSandi` varchar(35) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `user`
+-- Dumping data for table `seller`
 --
 
-INSERT INTO `user` (`id`, `nama_lengkap`, `tanggal_Lahir`, `email`, `kata_sandi`) VALUES
-(1, 'Benony Gabriel', '17/05/2004', 'beno17@gmail.com', 'test123'),
-(3, 'seller', '12', 'test', 'test'),
-(4, 'Jhon', '17/08/1999', 'jhon@mail.com', 'test1234'),
-(5, 'test', 'test', 'test', 'test'),
-(7, 'aril noah', '12/12/1999', 'ariel@mail.com', 'aril123'),
-(8, 'Ben', '17/10/2004', 'ben@mail.com', 'ben123'),
-(9, 'ony', '17/03/1999', 'ony@mail.com', '123');
+INSERT INTO `seller` (`sellerID`, `namaLengkap`, `tglLahir`, `email`, `kataSandi`) VALUES
+(1, 'Bintang Akbar Alim', '23/08/1999', 'masbin5@gmail.com', 'masbin123');
 
 --
 -- Indexes for dumped tables
@@ -108,16 +123,22 @@ ALTER TABLE `categories`
   ADD PRIMARY KEY (`catID`);
 
 --
+-- Indexes for table `customer`
+--
+ALTER TABLE `customer`
+  ADD PRIMARY KEY (`customerID`);
+
+--
 -- Indexes for table `products`
 --
 ALTER TABLE `products`
   ADD PRIMARY KEY (`prodID`);
 
 --
--- Indexes for table `user`
+-- Indexes for table `seller`
 --
-ALTER TABLE `user`
-  ADD PRIMARY KEY (`id`);
+ALTER TABLE `seller`
+  ADD PRIMARY KEY (`sellerID`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -130,16 +151,22 @@ ALTER TABLE `categories`
   MODIFY `catID` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
+-- AUTO_INCREMENT for table `customer`
+--
+ALTER TABLE `customer`
+  MODIFY `customerID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
   MODIFY `prodID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
--- AUTO_INCREMENT for table `user`
+-- AUTO_INCREMENT for table `seller`
 --
-ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+ALTER TABLE `seller`
+  MODIFY `sellerID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

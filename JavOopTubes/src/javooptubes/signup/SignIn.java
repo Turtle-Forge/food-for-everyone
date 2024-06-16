@@ -12,6 +12,7 @@ import java.sql.ResultSet;
 import java.util.Locale;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import javooptubes.customer.Customer;
 import javooptubes.seller.Products;
 
 /**
@@ -44,7 +45,7 @@ public class SignIn extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        userRoleLogin = new javax.swing.JComboBox<>();
         email = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
@@ -118,9 +119,9 @@ public class SignIn extends javax.swing.JFrame {
         jLabel5.setForeground(new java.awt.Color(51, 51, 51));
         jLabel5.setText("Pilih Role");
 
-        jComboBox1.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
-        jComboBox1.setForeground(new java.awt.Color(51, 51, 51));
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seller", "Customer" }));
+        userRoleLogin.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        userRoleLogin.setForeground(new java.awt.Color(51, 51, 51));
+        userRoleLogin.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seller", "Customer" }));
 
         email.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
         email.setForeground(new java.awt.Color(51, 51, 51));
@@ -186,7 +187,7 @@ public class SignIn extends javax.swing.JFrame {
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addComponent(jLabel5)
                                 .addGap(60, 60, 60)
-                                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(userRoleLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel7)
@@ -218,7 +219,7 @@ public class SignIn extends javax.swing.JFrame {
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(1, 1, 1)
                         .addComponent(jLabel5))
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(userRoleLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel7)
@@ -265,49 +266,63 @@ public class SignIn extends javax.swing.JFrame {
     private void loginBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginBtnActionPerformed
         // TODO add your handling code here:
         
-        String email, kataSandi, query, passDB = null;
+        String email, kataSandi, role, query, passDB = null;
         String SUrl, SUser, SPass;
         SUrl = "jdbc:MySQL://localhost:3306/tubespbodb";
         SUser = "root";
         SPass = "";
-        
+
         int notFound = 0;
 
-        try{
+        try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection con  = DriverManager.getConnection(SUrl, SUser, SPass);
+            Connection con = DriverManager.getConnection(SUrl, SUser, SPass);
             Statement st = con.createStatement();
-            if("".equals(this.email.getText())){
+
+            if ("".equals(this.email.getText())) {
                 JOptionPane.showMessageDialog(new JFrame(), "Email wajib diisi", "Error", JOptionPane.ERROR_MESSAGE);
-            }else if("".equals(this.kataSandi.getText())){
+            } else if ("".equals(this.kataSandi.getText())) {
                 JOptionPane.showMessageDialog(new JFrame(), "Kata Sandi wajib diisi", "Error", JOptionPane.ERROR_MESSAGE);
-            }else{
+            } else {
                 email = this.email.getText();
                 kataSandi = this.kataSandi.getText();
-//                System.out.println("Kata Sandi: " + kataSandi);
-                
-                query = "SELECT * FROM user WHERE email= '"+email+"'";
+                role = this.userRoleLogin.getSelectedItem().toString();
+
+                if ("Seller".equals(role)) {
+                    query = "SELECT * FROM seller WHERE email= '" + email + "'";
+                } else {
+                    query = "SELECT * FROM customer WHERE email= '" + email + "'";
+                }
+
                 ResultSet rs = st.executeQuery(query);
                 while (rs.next()) {
-                    passDB = rs.getString("kata_sandi");
+                    passDB = rs.getString("kataSandi");
                     notFound = 1;
                 }
-                if(notFound == 1 && kataSandi.equals(passDB)){
-                    System.out.println("Okeey");
-                    Products productsFrame = new Products();
-                    productsFrame.setVisible(true);
-                    productsFrame.pack();
-                    productsFrame.setLocationRelativeTo(null);
+
+                if (notFound == 1 && kataSandi.equals(passDB)) {
+                    System.out.println("Berhasil Masuk");
+
+                    if ("Seller".equals(role)) {
+                        Products sellerFrame = new Products();
+                        sellerFrame.setVisible(true);
+                        sellerFrame.pack();
+                        sellerFrame.setLocationRelativeTo(null);
+                    } else {
+                        Customer customerFrame = new Customer();
+                        customerFrame.setVisible(true);
+                        customerFrame.pack();
+                        customerFrame.setLocationRelativeTo(null);
+                    }
+
                     this.dispose();
-                }else{
+                } else {
                     JOptionPane.showMessageDialog(new JFrame(), "Kata Sandi atau Email Salah", "Error", JOptionPane.ERROR_MESSAGE);
                 }
-//                st.execute(query);
+
                 this.kataSandi.setText("");
-                
-//                JOptionPane.showMessageDialog(null, "Berhasil Mendaftar, Silahkan Login dengan Akun anda!");
             }
-        }catch(Exception e){
+        } catch (Exception e) {
             System.out.println("Error " + e.getMessage());
         }
     }//GEN-LAST:event_loginBtnActionPerformed
@@ -364,7 +379,6 @@ public class SignIn extends javax.swing.JFrame {
     private javax.swing.JLabel close;
     private javax.swing.JTextField email;
     private javax.swing.JButton jButton2;
-    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -378,5 +392,6 @@ public class SignIn extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPasswordField kataSandi;
     private javax.swing.JButton loginBtn;
+    private javax.swing.JComboBox<String> userRoleLogin;
     // End of variables declaration//GEN-END:variables
 }

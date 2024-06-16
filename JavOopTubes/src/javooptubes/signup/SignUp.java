@@ -44,7 +44,7 @@ public class SignUp extends javax.swing.JFrame {
         namaLengkap = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        userRole = new javax.swing.JComboBox<>();
         jLabel6 = new javax.swing.JLabel();
         tanggalLahir = new javax.swing.JTextField();
         email = new javax.swing.JTextField();
@@ -132,9 +132,9 @@ public class SignUp extends javax.swing.JFrame {
         jLabel5.setForeground(new java.awt.Color(51, 51, 51));
         jLabel5.setText("Pilih Role");
 
-        jComboBox1.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
-        jComboBox1.setForeground(new java.awt.Color(51, 51, 51));
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seller", "Customer" }));
+        userRole.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        userRole.setForeground(new java.awt.Color(51, 51, 51));
+        userRole.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seller", "Customer" }));
 
         jLabel6.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(51, 51, 51));
@@ -218,7 +218,7 @@ public class SignUp extends javax.swing.JFrame {
                                 .addGap(18, 18, 18)
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(namaLengkap)
-                                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(userRole, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel6)
@@ -254,7 +254,7 @@ public class SignUp extends javax.swing.JFrame {
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(1, 1, 1)
                         .addComponent(jLabel5))
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(userRole, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel4)
@@ -318,42 +318,51 @@ public class SignUp extends javax.swing.JFrame {
         // TODO add your handling code here:
         //        System.out.println("Tombol Daftar diklik");
 
-        String namaLengkap, tanggalLahir, email, kataSandi, query;
+        String namaLengkap, tanggalLahir, email, kataSandi, role, query;
         String SUrl, SUser, SPass;
         SUrl = "jdbc:MySQL://localhost:3306/tubespbodb";
         SUser = "root";
         SPass = "";
 
-        try{
+        try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection con  = DriverManager.getConnection(SUrl, SUser, SPass);
+            Connection con = DriverManager.getConnection(SUrl, SUser, SPass);
             Statement st = con.createStatement();
-            if("".equals(this.namaLengkap.getText())){
+
+            if ("".equals(this.namaLengkap.getText())) {
                 JOptionPane.showMessageDialog(new JFrame(), "Nama wajib diisi", "Error", JOptionPane.ERROR_MESSAGE);
-            } else if("".equals(this.tanggalLahir.getText())){
+            } else if ("".equals(this.tanggalLahir.getText())) {
                 JOptionPane.showMessageDialog(new JFrame(), "Tanggal lahir wajib diisi", "Error", JOptionPane.ERROR_MESSAGE);
-            }else if("".equals(this.email.getText())){
+            } else if ("".equals(this.email.getText())) {
                 JOptionPane.showMessageDialog(new JFrame(), "Email wajib diisi", "Error", JOptionPane.ERROR_MESSAGE);
-            }else if("".equals(this.kataSandi.getText())){
+            } else if ("".equals(this.kataSandi.getText())) {
                 JOptionPane.showMessageDialog(new JFrame(), "Kata Sandi wajib diisi", "Error", JOptionPane.ERROR_MESSAGE);
-            }else{
+            } else {
+                role = this.userRole.getSelectedItem().toString();
                 namaLengkap = this.namaLengkap.getText();
                 tanggalLahir = this.tanggalLahir.getText();
                 email = this.email.getText();
                 kataSandi = this.kataSandi.getText();
-                System.out.println("Kata Sandi: " + kataSandi);
                 
-                query = "INSERT INTO user(nama_lengkap, tanggal_Lahir, email, kata_sandi)" + 
-                        "VALUES('"+namaLengkap+"', '"+tanggalLahir+"', '"+email+"', '"+kataSandi+"')";
+                System.out.println("Kata Sandi: " + kataSandi);
+
+                if ("Seller".equals(role)) {
+                    query = "INSERT INTO seller(namaLengkap, tglLahir, email, kataSandi) "
+                            + "VALUES('" + namaLengkap + "', '" + tanggalLahir + "', '" + email + "', '" + kataSandi + "')";
+                } else {
+                    query = "INSERT INTO customer(namaLengkap, tglLahir, email, kataSandi) "
+                            + "VALUES('" + namaLengkap + "', '" + tanggalLahir + "', '" + email + "', '" + kataSandi + "')";
+                }
+
                 st.execute(query);
                 this.namaLengkap.setText("");
                 this.tanggalLahir.setText("");
                 this.email.setText("");
                 this.kataSandi.setText("");
-                
+
                 JOptionPane.showMessageDialog(null, "Berhasil Mendaftar, Silahkan Login dengan Akun anda!");
             }
-        }catch(Exception e){
+        } catch (Exception e) {
             System.out.println("Error " + e.getMessage());
         }
     }//GEN-LAST:event_signUpBtnActionPerformed
@@ -410,7 +419,6 @@ public class SignUp extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel close;
     private javax.swing.JTextField email;
-    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -429,5 +437,6 @@ public class SignUp extends javax.swing.JFrame {
     private javax.swing.JTextField namaLengkap;
     private javax.swing.JButton signUpBtn;
     private javax.swing.JTextField tanggalLahir;
+    private javax.swing.JComboBox<String> userRole;
     // End of variables declaration//GEN-END:variables
 }
