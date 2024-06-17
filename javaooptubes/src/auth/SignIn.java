@@ -17,6 +17,7 @@ import auth.SignUp;
 import userrole.customer.Beranda;
 import userrole.customer.Customer;
 import userrole.seller.Categories;
+import userrole.seller.Dashboard;
 import userrole.seller.Products;
 
 
@@ -313,10 +314,10 @@ public class SignIn extends javax.swing.JFrame {
 //                    UserSession.setUserName(rs.getString("namaLengkap"));
 
                     if ("Seller".equals(role)) {
-                        Products sellerFrame = new Products();
-                        sellerFrame.setVisible(true);
-                        sellerFrame.pack();
-                        sellerFrame.setLocationRelativeTo(null);
+                        Dashboard dashboardFrame = new Dashboard();
+                        dashboardFrame.setVisible(true);
+                        dashboardFrame.pack();
+                        dashboardFrame.setLocationRelativeTo(null);
 //                        this.dispose();
                     } else {
 //                        Beranda berandaFrame = new Beranda(userName);

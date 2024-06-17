@@ -27,20 +27,6 @@ public class Beranda extends javax.swing.JFrame {
         this.userName.setText(userName);
     }
     
-//    private static Beranda instance;
-//    public static Beranda getInstance() {
-//        if (instance == null) {
-//            instance = new Beranda();
-//        }
-//        return instance;
-//    }
-//    
-//    public static void showBeranda() {
-//        Beranda berandaFrame = Beranda.getInstance();
-//        berandaFrame.setVisible(true);
-//        berandaFrame.pack();
-//        berandaFrame.setLocationRelativeTo(null);
-//    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -56,7 +42,7 @@ public class Beranda extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         userName = new javax.swing.JLabel();
-        kategoriBtn2 = new javax.swing.JButton();
+        jelajahiProdukBtn = new javax.swing.JButton();
         jLabel9 = new javax.swing.JLabel();
         close = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
@@ -83,18 +69,18 @@ public class Beranda extends javax.swing.JFrame {
         userName.setForeground(new java.awt.Color(255, 102, 0));
         userName.setText("<name>");
 
-        kategoriBtn2.setBackground(new java.awt.Color(0, 153, 255));
-        kategoriBtn2.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
-        kategoriBtn2.setForeground(new java.awt.Color(255, 255, 255));
-        kategoriBtn2.setText("Jelajahi Produk");
-        kategoriBtn2.addMouseListener(new java.awt.event.MouseAdapter() {
+        jelajahiProdukBtn.setBackground(new java.awt.Color(0, 153, 255));
+        jelajahiProdukBtn.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        jelajahiProdukBtn.setForeground(new java.awt.Color(255, 255, 255));
+        jelajahiProdukBtn.setText("Jelajahi Produk");
+        jelajahiProdukBtn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                kategoriBtn2MouseClicked(evt);
+                jelajahiProdukBtnMouseClicked(evt);
             }
         });
-        kategoriBtn2.addActionListener(new java.awt.event.ActionListener() {
+        jelajahiProdukBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                kategoriBtn2ActionPerformed(evt);
+                jelajahiProdukBtnActionPerformed(evt);
             }
         });
 
@@ -114,7 +100,7 @@ public class Beranda extends javax.swing.JFrame {
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(232, 232, 232)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(kategoriBtn2, javax.swing.GroupLayout.PREFERRED_SIZE, 328, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jelajahiProdukBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 328, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addComponent(jLabel7)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -136,7 +122,7 @@ public class Beranda extends javax.swing.JFrame {
                 .addGap(40, 40, 40)
                 .addComponent(jLabel9)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 91, Short.MAX_VALUE)
-                .addComponent(kategoriBtn2)
+                .addComponent(jelajahiProdukBtn)
                 .addGap(150, 150, 150))
         );
 
@@ -295,24 +281,28 @@ public class Beranda extends javax.swing.JFrame {
     }//GEN-LAST:event_prodBtnFrameActionPerformed
 
     private void logoutBtn1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logoutBtn1MouseClicked
-//        SignIn signInFrame = new SignIn();
-//        signInFrame.setVisible(true);
-//        signInFrame.pack();
-//        signInFrame.setLocationRelativeTo(null);
-//        this.dispose();
+        SignIn signInFrame = new SignIn();
+        signInFrame.setVisible(true);
+        signInFrame.pack();
+        signInFrame.setLocationRelativeTo(null);
+        this.dispose();
     }//GEN-LAST:event_logoutBtn1MouseClicked
 
     private void logoutBtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutBtn1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_logoutBtn1ActionPerformed
 
-    private void kategoriBtn2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_kategoriBtn2MouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_kategoriBtn2MouseClicked
+    private void jelajahiProdukBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jelajahiProdukBtnMouseClicked
+        Customer produkFrame = new Customer();
+        produkFrame.setVisible(true);
+        produkFrame.pack();
+        produkFrame.setLocationRelativeTo(null);
+        this.dispose();
+    }//GEN-LAST:event_jelajahiProdukBtnMouseClicked
 
-    private void kategoriBtn2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kategoriBtn2ActionPerformed
+    private void jelajahiProdukBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jelajahiProdukBtnActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_kategoriBtn2ActionPerformed
+    }//GEN-LAST:event_jelajahiProdukBtnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -358,7 +348,7 @@ public class Beranda extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel4;
-    private javax.swing.JButton kategoriBtn2;
+    private javax.swing.JButton jelajahiProdukBtn;
     private javax.swing.JButton logoutBtn1;
     private javax.swing.JButton prodBtnFrame;
     private javax.swing.JLabel userName;

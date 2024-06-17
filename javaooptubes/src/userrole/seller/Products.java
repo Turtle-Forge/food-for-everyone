@@ -97,9 +97,10 @@ public class Products extends javax.swing.JFrame {
         prodTbl = new javax.swing.JTable();
         close = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
-        addBtn1 = new javax.swing.JButton();
+        dashboardBtnFrame = new javax.swing.JButton();
         kategoriBtn = new javax.swing.JButton();
         logoutBtn = new javax.swing.JButton();
+        kategoriBtnFrame = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -345,25 +346,25 @@ public class Products extends javax.swing.JFrame {
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
         jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Pilih Menu", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Century Gothic", 1, 14), new java.awt.Color(51, 51, 51))); // NOI18N
 
-        addBtn1.setBackground(new java.awt.Color(204, 204, 204));
-        addBtn1.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
-        addBtn1.setForeground(new java.awt.Color(102, 102, 102));
-        addBtn1.setText("Produk");
-        addBtn1.addMouseListener(new java.awt.event.MouseAdapter() {
+        dashboardBtnFrame.setBackground(new java.awt.Color(0, 153, 255));
+        dashboardBtnFrame.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        dashboardBtnFrame.setForeground(new java.awt.Color(255, 255, 255));
+        dashboardBtnFrame.setText("Dashboard");
+        dashboardBtnFrame.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                addBtn1MouseClicked(evt);
+                dashboardBtnFrameMouseClicked(evt);
             }
         });
-        addBtn1.addActionListener(new java.awt.event.ActionListener() {
+        dashboardBtnFrame.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                addBtn1ActionPerformed(evt);
+                dashboardBtnFrameActionPerformed(evt);
             }
         });
 
-        kategoriBtn.setBackground(new java.awt.Color(0, 153, 255));
+        kategoriBtn.setBackground(new java.awt.Color(204, 204, 204));
         kategoriBtn.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
-        kategoriBtn.setForeground(new java.awt.Color(255, 255, 255));
-        kategoriBtn.setText("Kategori");
+        kategoriBtn.setForeground(new java.awt.Color(102, 102, 102));
+        kategoriBtn.setText("Produk");
         kategoriBtn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 kategoriBtnMouseClicked(evt);
@@ -390,6 +391,21 @@ public class Products extends javax.swing.JFrame {
             }
         });
 
+        kategoriBtnFrame.setBackground(new java.awt.Color(0, 153, 255));
+        kategoriBtnFrame.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        kategoriBtnFrame.setForeground(new java.awt.Color(255, 255, 255));
+        kategoriBtnFrame.setText("Kategori");
+        kategoriBtnFrame.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                kategoriBtnFrameMouseClicked(evt);
+            }
+        });
+        kategoriBtnFrame.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                kategoriBtnFrameActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
@@ -397,18 +413,21 @@ public class Products extends javax.swing.JFrame {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(addBtn1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(dashboardBtnFrame, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(kategoriBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE)
-                    .addComponent(logoutBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(logoutBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(kategoriBtnFrame, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE))
                 .addContainerGap())
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(39, 39, 39)
-                .addComponent(addBtn1)
+                .addComponent(dashboardBtnFrame)
                 .addGap(18, 18, 18)
                 .addComponent(kategoriBtn)
+                .addGap(18, 18, 18)
+                .addComponent(kategoriBtnFrame)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(logoutBtn)
                 .addContainerGap())
@@ -576,13 +595,18 @@ public class Products extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_closeMouseClicked
 
-    private void addBtn1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addBtn1MouseClicked
+    private void dashboardBtnFrameMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_dashboardBtnFrameMouseClicked
         // TODO add your handling code here:
-    }//GEN-LAST:event_addBtn1MouseClicked
+        Dashboard dashboardFrame = new Dashboard();
+        dashboardFrame.setVisible(true);
+        dashboardFrame.pack();
+        dashboardFrame.setLocationRelativeTo(null);
+        this.dispose();
+    }//GEN-LAST:event_dashboardBtnFrameMouseClicked
 
-    private void addBtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addBtn1ActionPerformed
+    private void dashboardBtnFrameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dashboardBtnFrameActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_addBtn1ActionPerformed
+    }//GEN-LAST:event_dashboardBtnFrameActionPerformed
 
     private void kategoriBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_kategoriBtnMouseClicked
         Categories catgFrame = new Categories();
@@ -607,6 +631,19 @@ public class Products extends javax.swing.JFrame {
     private void logoutBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutBtnActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_logoutBtnActionPerformed
+
+    private void kategoriBtnFrameMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_kategoriBtnFrameMouseClicked
+        // TODO add your handling code here:
+        Categories categeryFrame = new Categories();
+        categeryFrame.setVisible(true);
+        categeryFrame.pack();
+        categeryFrame.setLocationRelativeTo(null);
+        this.dispose();
+    }//GEN-LAST:event_kategoriBtnFrameMouseClicked
+
+    private void kategoriBtnFrameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kategoriBtnFrameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_kategoriBtnFrameActionPerformed
 
     /**
      * @param args the command line arguments
@@ -646,9 +683,9 @@ public class Products extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton addBtn;
-    private javax.swing.JButton addBtn1;
     private javax.swing.JButton clearBtn;
     private javax.swing.JLabel close;
+    private javax.swing.JButton dashboardBtnFrame;
     private javax.swing.JButton delBtn;
     private javax.swing.JButton editBtn;
     private javax.swing.JLabel jLabel10;
@@ -662,6 +699,7 @@ public class Products extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JButton kategoriBtn;
+    private javax.swing.JButton kategoriBtnFrame;
     private javax.swing.JButton logoutBtn;
     private javax.swing.JComboBox<String> prodCat;
     private javax.swing.JTextField prodID;

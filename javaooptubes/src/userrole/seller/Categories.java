@@ -75,9 +75,10 @@ public class Categories extends javax.swing.JFrame {
         categoryTbl = new javax.swing.JTable();
         close = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
-        produkBtn = new javax.swing.JButton();
-        addBtn5 = new javax.swing.JButton();
+        dasBtnFrame = new javax.swing.JButton();
+        prodBtnFrame = new javax.swing.JButton();
         logoutBtn = new javax.swing.JButton();
+        addBtn6 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -279,33 +280,33 @@ public class Categories extends javax.swing.JFrame {
         jPanel4.setBackground(new java.awt.Color(255, 255, 255));
         jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Pilih Menu", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Century Gothic", 1, 14), new java.awt.Color(51, 51, 51))); // NOI18N
 
-        produkBtn.setBackground(new java.awt.Color(0, 153, 255));
-        produkBtn.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
-        produkBtn.setForeground(new java.awt.Color(255, 255, 255));
-        produkBtn.setText("Produk");
-        produkBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+        dasBtnFrame.setBackground(new java.awt.Color(0, 153, 255));
+        dasBtnFrame.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        dasBtnFrame.setForeground(new java.awt.Color(255, 255, 255));
+        dasBtnFrame.setText("Dashboard");
+        dasBtnFrame.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                produkBtnMouseClicked(evt);
+                dasBtnFrameMouseClicked(evt);
             }
         });
-        produkBtn.addActionListener(new java.awt.event.ActionListener() {
+        dasBtnFrame.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                produkBtnActionPerformed(evt);
+                dasBtnFrameActionPerformed(evt);
             }
         });
 
-        addBtn5.setBackground(new java.awt.Color(204, 204, 204));
-        addBtn5.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
-        addBtn5.setForeground(new java.awt.Color(102, 102, 102));
-        addBtn5.setText("Kategori");
-        addBtn5.addMouseListener(new java.awt.event.MouseAdapter() {
+        prodBtnFrame.setBackground(new java.awt.Color(0, 153, 255));
+        prodBtnFrame.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        prodBtnFrame.setForeground(new java.awt.Color(255, 255, 255));
+        prodBtnFrame.setText("Produk");
+        prodBtnFrame.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                addBtn5MouseClicked(evt);
+                prodBtnFrameMouseClicked(evt);
             }
         });
-        addBtn5.addActionListener(new java.awt.event.ActionListener() {
+        prodBtnFrame.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                addBtn5ActionPerformed(evt);
+                prodBtnFrameActionPerformed(evt);
             }
         });
 
@@ -324,6 +325,21 @@ public class Categories extends javax.swing.JFrame {
             }
         });
 
+        addBtn6.setBackground(new java.awt.Color(204, 204, 204));
+        addBtn6.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        addBtn6.setForeground(new java.awt.Color(102, 102, 102));
+        addBtn6.setText("Kategori");
+        addBtn6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                addBtn6MouseClicked(evt);
+            }
+        });
+        addBtn6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addBtn6ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
@@ -331,19 +347,22 @@ public class Categories extends javax.swing.JFrame {
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(produkBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(addBtn5, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE)
-                    .addComponent(logoutBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(dasBtnFrame, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(prodBtnFrame, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE)
+                    .addComponent(logoutBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(addBtn6, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE))
                 .addContainerGap())
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addGap(39, 39, 39)
-                .addComponent(produkBtn)
+                .addComponent(dasBtnFrame)
                 .addGap(18, 18, 18)
-                .addComponent(addBtn5)
-                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(prodBtnFrame)
+                .addGap(18, 18, 18)
+                .addComponent(addBtn6)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(logoutBtn)
                 .addContainerGap())
         );
@@ -503,25 +522,31 @@ public class Categories extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_closeMouseClicked
 
-    private void produkBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_produkBtnMouseClicked
+    private void dasBtnFrameMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_dasBtnFrameMouseClicked
+        Dashboard dashFrame = new Dashboard();
+        dashFrame.setVisible(true);
+        dashFrame.pack();
+        dashFrame.setLocationRelativeTo(null);
+        this.dispose();
+    }//GEN-LAST:event_dasBtnFrameMouseClicked
+
+    private void dasBtnFrameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dasBtnFrameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_dasBtnFrameActionPerformed
+
+    private void prodBtnFrameMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_prodBtnFrameMouseClicked
+        // TODO add your handling code here:
         Products produkFrame = new Products();
         produkFrame.setVisible(true);
         produkFrame.pack();
         produkFrame.setLocationRelativeTo(null);
         this.dispose();
-    }//GEN-LAST:event_produkBtnMouseClicked
+        
+    }//GEN-LAST:event_prodBtnFrameMouseClicked
 
-    private void produkBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_produkBtnActionPerformed
+    private void prodBtnFrameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_prodBtnFrameActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_produkBtnActionPerformed
-
-    private void addBtn5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addBtn5MouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_addBtn5MouseClicked
-
-    private void addBtn5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addBtn5ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_addBtn5ActionPerformed
+    }//GEN-LAST:event_prodBtnFrameActionPerformed
 
     private void logoutBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logoutBtnMouseClicked
         SignIn signInFrame = new SignIn();
@@ -534,6 +559,14 @@ public class Categories extends javax.swing.JFrame {
     private void logoutBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutBtnActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_logoutBtnActionPerformed
+
+    private void addBtn6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addBtn6MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_addBtn6MouseClicked
+
+    private void addBtn6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addBtn6ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_addBtn6ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -573,13 +606,14 @@ public class Categories extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton addBtn;
-    private javax.swing.JButton addBtn5;
+    private javax.swing.JButton addBtn6;
     private javax.swing.JTextField catDesc;
     private javax.swing.JTextField catID;
     private javax.swing.JTextField catName;
     private javax.swing.JTable categoryTbl;
     private javax.swing.JButton clearBtn;
     private javax.swing.JLabel close;
+    private javax.swing.JButton dasBtnFrame;
     private javax.swing.JButton editBtn;
     private javax.swing.JButton hapusBtn;
     private javax.swing.JLabel jLabel10;
@@ -591,6 +625,6 @@ public class Categories extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JButton logoutBtn;
-    private javax.swing.JButton produkBtn;
+    private javax.swing.JButton prodBtnFrame;
     // End of variables declaration//GEN-END:variables
 }
