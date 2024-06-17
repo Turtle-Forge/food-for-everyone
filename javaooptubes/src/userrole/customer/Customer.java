@@ -620,11 +620,12 @@ public class Customer extends javax.swing.JFrame {
     }//GEN-LAST:event_prodIDActionPerformed
 
     private void berandaBtnFrameMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_berandaBtnFrameMouseClicked
-//        // TODO add your handling code here:
+
         Beranda berandaFrame = new Beranda();
         berandaFrame.setVisible(true);
         berandaFrame.pack();
         berandaFrame.setLocationRelativeTo(null);
+        this.dispose();
     }//GEN-LAST:event_berandaBtnFrameMouseClicked
 
     private void berandaBtnFrameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_berandaBtnFrameActionPerformed

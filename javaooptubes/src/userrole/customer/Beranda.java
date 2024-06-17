@@ -26,6 +26,21 @@ public class Beranda extends javax.swing.JFrame {
         String userName = UserSession.getUserName();
         this.userName.setText(userName);
     }
+    
+//    private static Beranda instance;
+//    public static Beranda getInstance() {
+//        if (instance == null) {
+//            instance = new Beranda();
+//        }
+//        return instance;
+//    }
+//    
+//    public static void showBeranda() {
+//        Beranda berandaFrame = Beranda.getInstance();
+//        berandaFrame.setVisible(true);
+//        berandaFrame.pack();
+//        berandaFrame.setLocationRelativeTo(null);
+//    }
 
     /**
      * This method is called from within the constructor to initialize the form.

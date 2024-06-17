@@ -345,9 +345,9 @@ public class Products extends javax.swing.JFrame {
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
         jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Pilih Menu", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Century Gothic", 1, 14), new java.awt.Color(51, 51, 51))); // NOI18N
 
-        addBtn1.setBackground(new java.awt.Color(0, 153, 255));
+        addBtn1.setBackground(new java.awt.Color(204, 204, 204));
         addBtn1.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
-        addBtn1.setForeground(new java.awt.Color(255, 255, 255));
+        addBtn1.setForeground(new java.awt.Color(102, 102, 102));
         addBtn1.setText("Produk");
         addBtn1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -360,9 +360,9 @@ public class Products extends javax.swing.JFrame {
             }
         });
 
-        kategoriBtn.setBackground(new java.awt.Color(204, 204, 204));
+        kategoriBtn.setBackground(new java.awt.Color(0, 153, 255));
         kategoriBtn.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
-        kategoriBtn.setForeground(new java.awt.Color(102, 102, 102));
+        kategoriBtn.setForeground(new java.awt.Color(255, 255, 255));
         kategoriBtn.setText("Kategori");
         kategoriBtn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {

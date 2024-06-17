@@ -279,9 +279,9 @@ public class Categories extends javax.swing.JFrame {
         jPanel4.setBackground(new java.awt.Color(255, 255, 255));
         jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Pilih Menu", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Century Gothic", 1, 14), new java.awt.Color(51, 51, 51))); // NOI18N
 
-        produkBtn.setBackground(new java.awt.Color(204, 204, 204));
+        produkBtn.setBackground(new java.awt.Color(0, 153, 255));
         produkBtn.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
-        produkBtn.setForeground(new java.awt.Color(102, 102, 102));
+        produkBtn.setForeground(new java.awt.Color(255, 255, 255));
         produkBtn.setText("Produk");
         produkBtn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -294,9 +294,9 @@ public class Categories extends javax.swing.JFrame {
             }
         });
 
-        addBtn5.setBackground(new java.awt.Color(0, 153, 255));
+        addBtn5.setBackground(new java.awt.Color(204, 204, 204));
         addBtn5.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
-        addBtn5.setForeground(new java.awt.Color(255, 255, 255));
+        addBtn5.setForeground(new java.awt.Color(102, 102, 102));
         addBtn5.setText("Kategori");
         addBtn5.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -353,7 +353,6 @@ public class Categories extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(0, 0, 0)
                 .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(0, 0, 0)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))

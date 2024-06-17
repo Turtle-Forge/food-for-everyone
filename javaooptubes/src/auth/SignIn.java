@@ -14,6 +14,7 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import auth.SignIn;
 import auth.SignUp;
+import userrole.customer.Beranda;
 import userrole.customer.Customer;
 import userrole.seller.Categories;
 import userrole.seller.Products;
@@ -272,6 +273,7 @@ public class SignIn extends javax.swing.JFrame {
         
         String email, kataSandi, role, query, passDB = null;
         String SUrl, SUser, SPass;
+        String userName = null;
         SUrl = "jdbc:MySQL://localhost:3306/tubespbodb";
         SUser = "root";
         SPass = "";
@@ -301,22 +303,28 @@ public class SignIn extends javax.swing.JFrame {
                 ResultSet rs = st.executeQuery(query);
                 while (rs.next()) {
                     passDB = rs.getString("kataSandi");
+//                    userName = rs.getString("namaLengkap");
+                    UserSession.setUserName(rs.getString("namaLengkap"));
                     notFound = 1;
                 }
 
                 if (notFound == 1 && kataSandi.equals(passDB)) {
                     System.out.println("Berhasil Masuk");
+//                    UserSession.setUserName(rs.getString("namaLengkap"));
 
                     if ("Seller".equals(role)) {
                         Products sellerFrame = new Products();
                         sellerFrame.setVisible(true);
                         sellerFrame.pack();
                         sellerFrame.setLocationRelativeTo(null);
+//                        this.dispose();
                     } else {
-                        Customer customerFrame = new Customer();
-                        customerFrame.setVisible(true);
-                        customerFrame.pack();
-                        customerFrame.setLocationRelativeTo(null);
+//                        Beranda berandaFrame = new Beranda(userName);
+                        Beranda berandaFrame = new Beranda();
+                        berandaFrame.setVisible(true);
+                        berandaFrame.pack();
+                        berandaFrame.setLocationRelativeTo(null);
+//                        this.dispose();
                     }
 
                     this.dispose();
